@@ -9,3 +9,16 @@ function randomLetterGen() {
     letterToGuess = letters[Math.floor(Math.random() * letters.length)];
     console.log(letterToGuess);
 }
+randomLetterGen();
+function updatedTotalGuesses(){
+    document.querySelector("#guesses-left").innerHTML = totalGuesses;
+}
+updatedTotalGuesses();
+function updateGuesses() {
+    document.querySelector("#guesses-so-far").innerHTML = guessedLetters.join(", ");
+}
+document.onkeydown = function(event) {
+    var letter = event.key.toLowerCase();
+    console.log("user guess: " + letter);
+    
+}
