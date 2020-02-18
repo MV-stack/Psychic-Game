@@ -20,5 +20,18 @@ function updateGuesses() {
 document.onkeydown = function(event) {
     var letter = event.key.toLowerCase();
     console.log("user guess: " + letter);
-    
+    totalGuesses--;
+    guessedLetters.push(letter);   
+    updatedTotalGuesses();
+    updateGuesses();
+     if(letter === letterToGuess) {
+         wins++;
+         document.querySelector("#wins").innerHTML = wins;
+         restart();
+     }
+     if(totalGuesses === 0) {
+         losses++;
+         document.querySelector("#losses").innerHTML = losses;
+         restart();
+     }
 }
