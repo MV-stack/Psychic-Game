@@ -35,3 +35,10 @@ document.onkeydown = function(event) {
          restart();
      }
 }
+function restart() {
+    totalGuesses = 10;
+    guessedLetters = [];
+    updatedTotalGuesses();
+    randomLetterGen();
+    updateGuesses();
+}
